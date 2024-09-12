@@ -1,5 +1,7 @@
 package org.example.models;
 
+import java.util.Date;
+
 public class Venta {
     private int id;
     private int id_tipopago;
