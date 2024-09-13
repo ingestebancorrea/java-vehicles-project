@@ -43,7 +43,7 @@ public class UsuarioDAO implements InterfaceDAO {
             System.out.println("3. Vendedor: ");
             int idRol = in.nextInt();
 
-            String sql = "INSERT INTO Usuario(`nombre`, `apellido`, `id_tipodocumento`, `numerodocumento`, `email`, `direccion`, `telefono`, `id_rol`) VALUES (?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO Usuario(`nombre`, `apellido`, `id_tipodocumento`, `numerodocumento`, `email`, `direccion`, `telefono`, `id_rol`, `estado`) VALUES (?,?,?,?,?,?,?,?,?)";
             var stm = conn.conexion().prepareStatement(sql);
             stm.setString(1, nombre);
             stm.setString(2, apellido);
@@ -53,6 +53,7 @@ public class UsuarioDAO implements InterfaceDAO {
             stm.setString(6, direccion);
             stm.setString(7, telefono);
             stm.setInt(8, idRol);
+            stm.setBoolean(9, true);
             int rs = stm.executeUpdate();
 
             if (rs > 0) {
