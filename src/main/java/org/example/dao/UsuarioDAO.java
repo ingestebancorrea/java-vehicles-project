@@ -144,4 +144,9 @@ public class UsuarioDAO implements InterfaceDAO {
         String usersFormatted = String.format("Usuario: %s", listaUsuario);
         System.out.println(usersFormatted);
     }
+
+    @Override
+    public void deshabilitar() throws SQLException {
+
+    }
 }

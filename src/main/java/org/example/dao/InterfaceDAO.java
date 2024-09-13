@@ -8,4 +8,5 @@ public interface InterfaceDAO {
     public void modificar() throws SQLException;
     public void listar() throws SQLException;
     public void buscar(String nombre) throws SQLException;
+    public void deshabilitar() throws SQLException;
 }

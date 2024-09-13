@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.dao.ClienteDAO;
 import org.example.dao.UsuarioDAO;
 
 import java.sql.SQLException;
@@ -12,6 +13,15 @@ public class Main {
         // usuarioDao.listar();
         // usuarioDao.eliminar();
         // usuarioDao.modificar();
-        usuarioDao.buscar("Emily");
+        //usuarioDao.buscar("Emily");
+
+        ClienteDAO clienteDao = new ClienteDAO();
+
+        //clienteDao.listar();
+        //clienteDao.insertar();
+        //clienteDao.modificar();
+        //clienteDao.eliminar();
+        //clienteDao.deshabilitar();
+        clienteDao.buscar("Yeizer");
     }
 }
