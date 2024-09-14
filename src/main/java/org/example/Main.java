@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.dao.ClienteDAO;
+import org.example.dao.EnvioDAO;
 import org.example.dao.UsuarioDAO;
 import org.example.dao.VendedorDAO;
 
@@ -11,6 +12,7 @@ public class Main {
         UsuarioDAO usuarioDao = new UsuarioDAO();
         VendedorDAO vendedorDAO = new VendedorDAO();
         ClienteDAO clienteDao = new ClienteDAO();
+        EnvioDAO envioDao = new EnvioDAO();
 
         // usuarioDao.insertar();
         // usuarioDao.listar();
@@ -29,6 +31,8 @@ public class Main {
         //clienteDao.modificar();
         //clienteDao.eliminar();
         //clienteDao.deshabilitar();
-        clienteDao.buscar();
+        //clienteDao.buscar();
+
+        envioDao.insertar();
     }
 }
