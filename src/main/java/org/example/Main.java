@@ -29,6 +29,6 @@ public class Main {
         //clienteDao.modificar();
         //clienteDao.eliminar();
         //clienteDao.deshabilitar();
-        clienteDao.buscar("Yeizer");
+        clienteDao.buscar();
     }
 }
