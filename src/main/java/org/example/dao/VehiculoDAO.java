@@ -27,4 +27,9 @@ public class VehiculoDAO implements InterfaceDAO {
     public void buscar() throws SQLException {
 
     }
+
+    @java.lang.Override
+    public void deshabilitar() throws SQLException {
+
+    }
 }

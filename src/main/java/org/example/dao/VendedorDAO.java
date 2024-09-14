@@ -142,4 +142,9 @@ public class VendedorDAO implements InterfaceDAO {
         String usersFormatted = String.format("Vendedor: %s", listaVendedor);
         System.out.println(usersFormatted);
     }
+
+    @Override
+    public void deshabilitar() throws SQLException {
+
+    }
 }
