@@ -59,7 +59,7 @@ public class ClienteDAO implements InterfaceDAO {
         String telefono = scanner.nextLine();
         int idRol = 2;
 
-        String sql = "INSERT INTO Usuario(`nombre`, `apellido`, `id_tipodocumento`, `numerodocumento`, `email`, `direccion`, `telefono`, `id_rol`, `estado`) VALUES (?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO Usuario(`nombre`, `apellido`, `id_tipodocumento`, `numerodocumento`, `email`, `direccion`, `telefono`, `registro`,`id_rol`, `estado`) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
         try {
             // Preparar la sentencia SQL
@@ -71,8 +71,9 @@ public class ClienteDAO implements InterfaceDAO {
             pstm.setString(5, email);
             pstm.setString(6, direccion);
             pstm.setString(7, telefono);
-            pstm.setInt(8, idRol);
-            pstm.setBoolean(9, true);
+            pstm.setDate(8, new java.sql.Date(System.currentTimeMillis()));
+            pstm.setInt(9, idRol);
+            pstm.setBoolean(10, true);
 
             int affectedRows = pstm.executeUpdate();
 
@@ -158,6 +159,12 @@ public class ClienteDAO implements InterfaceDAO {
     @Override
     public void deshabilitar() throws SQLException {
         Scanner scanner = new Scanner(System.in);
+
+        listar();
+
+        if (listaClientes.isEmpty()) {
+            return;
+        }
 
         // Solicitar el ID del usuario a desactivar
         System.out.println("Ingrese el ID del cliente que desea desactivar:");
