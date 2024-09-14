@@ -1,5 +1,8 @@
 package org.example.models;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Usuario {
     private int id;
     private String nombre;
@@ -27,6 +30,15 @@ public class Usuario {
         this.id_rol = id_rol;
         this.estado = estado;
     }
+
+    public static Usuario load(ResultSet rs) throws SQLException {
+        Usuario usuario = new Usuario();
+        usuario.id = rs.getInt("id");
+        usuario.nombre = rs.getString("nombre");
+        usuario.email = rs.getString("email");
+        return usuario;
+    }
+
 
     public int getId() {
         return id;
@@ -106,5 +118,9 @@ public class Usuario {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public String toString() {
+        return String.format("id=%d, nombre='%s', email='%s'", id, nombre, email);
     }
 }
