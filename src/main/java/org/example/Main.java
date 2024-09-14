@@ -5,9 +5,10 @@ import org.example.dao.UsuarioDAO;
 import org.example.dao.VendedorDAO;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, ParseException {
         UsuarioDAO usuarioDao = new UsuarioDAO();
         VendedorDAO vendedorDAO = new VendedorDAO();
         ClienteDAO clienteDao = new ClienteDAO();
@@ -18,17 +19,18 @@ public class Main {
         // usuarioDao.modificar();
         //usuarioDao.buscar();
 
-        // vendedorDAO.insertar();
-        // vendedorDAO.listar();
-        // vendedorDAO.eliminar();
-        // usuarioDao.modificar();
+         //vendedorDAO.insertar();
+        //vendedorDAO.listar();
+        //vendedorDAO.eliminar();
+         //vendedorDAO.modificar();
         //vendedorDAO.buscar();
+        //vendedorDAO.deshabilitar();
 
         //clienteDao.listar();
         //clienteDao.insertar();
         //clienteDao.modificar();
         //clienteDao.eliminar();
         //clienteDao.deshabilitar();
-        clienteDao.buscar();
+        //clienteDao.buscar();
     }
 }
