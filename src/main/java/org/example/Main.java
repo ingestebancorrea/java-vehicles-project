@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.dao.ClienteDAO;
-import org.example.dao.EnvioDAO;
-import org.example.dao.UsuarioDAO;
-import org.example.dao.VendedorDAO;
+import org.example.dao.*;
 
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -13,6 +10,7 @@ public class Main {
         UsuarioDAO usuarioDao = new UsuarioDAO();
         VendedorDAO vendedorDAO = new VendedorDAO();
         ClienteDAO clienteDao = new ClienteDAO();
+        AdministradorDAO administradorDao = new AdministradorDAO();
         EnvioDAO envioDao = new EnvioDAO();
 
         // usuarioDao.insertar();
@@ -34,6 +32,13 @@ public class Main {
         //clienteDao.eliminar();
         //clienteDao.deshabilitar();
         //clienteDao.buscar();
+
+//        administradorDao.listar();
+//        administradorDao.insertar();
+//        administradorDao.modificar();
+//        administradorDao.eliminar();
+//        administradorDao.listar();
+//        administradorDao.buscar();
 
         envioDao.insertar();
     }
