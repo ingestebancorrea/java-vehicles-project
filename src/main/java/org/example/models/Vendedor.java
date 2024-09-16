@@ -11,20 +11,31 @@ public class Vendedor extends Usuario{
     private int id_usuario;
 
     public Vendedor() {
+        super();
     }
 
-    public Vendedor(int id, Date fecha_contratacion, int comision, int id_usuario) {
+
+    public Vendedor(int id, String nombre, String apellido, int id_tipodocumento, String numeroDocumento, String email, String direccion, String telefono, int id_rol, int id_usuario, Date fecha_contratacion, boolean estado) {
+        super(id, nombre, apellido, id_tipodocumento, numeroDocumento, email, direccion, telefono, id_rol, estado);
+        this.id_usuario = id_usuario;
         this.id = id;
         this.fecha_contratacion = fecha_contratacion;
-        this.comision = comision;
-        this.id_usuario = id_usuario;
     }
 
     public static Vendedor load(ResultSet rs) throws SQLException {
         Vendedor vendedor = new Vendedor();
-        vendedor.id = rs.getInt("id");
-        vendedor.fecha_contratacion = rs.getDate("fecha_contratacion");
-        vendedor.id_usuario = rs.getInt("id_usuario");
+        vendedor.setId(rs.getInt("id"));
+        vendedor.setFecha_contratacion(rs.getDate("fecha_contratacion"));
+        vendedor.setNombre(rs.getString("nombre"));
+        vendedor.setApellido(rs.getString("apellido"));
+        vendedor.setId_tipodocumento(rs.getInt("id_tipodocumento"));
+        vendedor.setNumerodocumento(rs.getString("numerodocumento"));
+        vendedor.setEmail(rs.getString("email"));
+        vendedor.setDireccion(rs.getString("direccion"));
+        vendedor.setTelefono(rs.getString("telefono"));
+        vendedor.setId_rol(rs.getInt("id_rol"));
+
+        vendedor.setId_usuario(rs.getInt("id"));
         return vendedor;
     }
 
@@ -53,7 +64,29 @@ public class Vendedor extends Usuario{
         this.id_usuario = id_usuario;
     }
 
+    @Override
     public String toString() {
-        return String.format("id=%d, fecha_contratacion='%s', id_usuario='%s'", id, fecha_contratacion, id_usuario);
+        return String.format(
+                "{" +
+                        "id=%d, " +
+                        "nombre='%s', " +
+                        "apellido='%s', " +
+                        "id_tipodocumento=%d, " +
+                        "numeroDocumento='%s', " +
+                        "email='%s', " +
+                        "direccion='%s', " +
+                        "telefono='%s', " +
+                        "fecha_contratacion='%s'" +
+                        '}',
+                getId(),
+                getNombre(),
+                getApellido(),
+                getId_tipodocumento(),
+                getNumerodocumento(),
+                getEmail(),
+                getDireccion(),
+                getTelefono(),
+                getFecha_contratacion()
+        );
     }
 }

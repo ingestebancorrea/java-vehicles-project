@@ -12,8 +12,8 @@ public class Cliente extends Usuario {
     }
 
 
-    public Cliente(int id, String nombre, String apellido, int id_tipodocumento, String numeroDocumento, String email, String direccion, String telefono, int id_rol, int id_usuario) {
-        super(id, nombre, apellido, id_tipodocumento, numeroDocumento, email, direccion, telefono, id_rol, true);  // Llama al constructor de Usuario
+    public Cliente(int id, String nombre, String apellido, int id_tipodocumento, String numeroDocumento, String email, String direccion, String telefono, int id_rol, int id_usuario, boolean estado) {
+        super(id, nombre, apellido, id_tipodocumento, numeroDocumento, email, direccion, telefono, id_rol, estado);
         this.id_usuario = id_usuario;
         this.id = id;
     }
@@ -69,7 +69,7 @@ public class Cliente extends Usuario {
                         "numeroDocumento='%s', " +
                         "email='%s', " +
                         "direccion='%s', " +
-                        "telefono='%s', " +
+                        "telefono='%s'" +
                         '}',
                 getId(),
                 getNombre(),
